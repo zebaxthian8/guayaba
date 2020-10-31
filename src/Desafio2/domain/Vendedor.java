@@ -9,7 +9,7 @@ public class Vendedor extends Directo{
     }
 
     public long calcularComision(){
-        if(getSalario() > 1000000){
+        if(getSalario() < 1000000){
             return (long) (this.ventasDelMes * 0.04);
         }else{
             return (long) (this.ventasDelMes * 0.035);
