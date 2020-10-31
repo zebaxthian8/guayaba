@@ -37,7 +37,7 @@ public class Guayabita {
         }else {return false;}
     }
 
-    public void mostrarjugador() {
+    public void Tablero() {
         jugadoresList.forEach(jugadores -> {
             System.out.println(jugadores.getNombre());
             System.out.println(jugadores.getDinero());

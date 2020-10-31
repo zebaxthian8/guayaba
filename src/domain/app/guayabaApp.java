@@ -77,12 +77,23 @@ public class guayabaApp {
                         }
                     }
                 }while(game.getPote()!=0 || game.hayJugadores()!=false );
+                String tablaFinal = "";
+                for(int i = 0; i < cantidadJugadores; i++){
+                    tablaFinal += "\nNombre: " + game.jugadoresList.get(i).getNombre() + "     Dinero: " + game.jugadoresList.get(i).getDinero();
+                }
 
-                game.mostrarjugador();
+                JOptionPane.showMessageDialog(null,"Tabla de jugadores: " + tablaFinal + "\n Pote: " + game.getPote(), "Guayabita",0, guayaIcon);
                 break;
             }
             case INSTRUCCIONES: {
-                System.out.println("x");
+                String instru = "Instrucciones:" +
+                        "\nEl juego al iniciar tienes que ingresar la cantidad de jugadores, sus nombres y la cantidad de dineron"
+                        +"\n va por turnos y consiste en que cada jugador lanza un dado para hacer una apuesta, si saca 1 0 6, cede el turno"
+                        +"\n, al sacar un nuveo el jugador puede decicir si apostar o no. No puede apostar mas de lo que hay en pote "
+                        + "\n y debera tirar el dado otra vez intentando sacar un numero mayor a la inicial para ganar la apuesta."
+                        +"\n El juego termina cuando no hayan jugadores con dinero o el pote sea 0.";
+                JOptionPane.showMessageDialog(null,instru, "Guayabita",0, guayaIcon);
+
                 break;
             }
         }
